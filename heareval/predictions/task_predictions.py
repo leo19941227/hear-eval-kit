@@ -178,7 +178,7 @@ class FullyConnectedPrediction(torch.nn.Module):
             self.activation: torch.nn.Module = torch.nn.Sigmoid()
             self.logit_loss = torch.nn.BCEWithLogitsLoss()
         elif prediction_type == "multiclass":
-            self.activation = torch.nn.Softmax()
+            self.activation = torch.nn.Softmax(dim=-1)
             self.logit_loss = OneHotToCrossEntropyLoss()
         else:
             raise ValueError(f"Unknown prediction_type {prediction_type}")

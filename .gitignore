@@ -153,3 +153,5 @@ spotty.yaml
 ./tasks/
 lightning_logs/
 wandb/
+pretrained/
+embeddings/
